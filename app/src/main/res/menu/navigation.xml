@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+
+    <item
+        android:id="@+id/ItemPlayer"
+        android:icon="@drawable/photo_anfas_players"
+        android:title="@string/TvPlayer" />
+
+    <item
+        android:id="@+id/ItemBiografy"
+        android:icon="@drawable/biografy_players"
+        android:title="@string/TvBiografyPkayer" />
+
+    <item
+        android:id="@+id/ItemPhoto"
+        android:icon="@drawable/photos_players"
+        android:title="@string/TvPhotoPlayer" />
+
+
+
+</menu>
