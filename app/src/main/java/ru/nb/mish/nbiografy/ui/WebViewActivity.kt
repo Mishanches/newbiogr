@@ -5,14 +5,12 @@ import android.net.Uri
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.view.KeyEvent
-import android.webkit.WebSettings
 import android.webkit.WebView
 import android.webkit.WebViewClient
 import kotlinx.android.synthetic.main.activity_web_view.*
 
 import ru.nb.mish.nbiografy.R
 import ru.nb.mish.nbiografy.components.IntentHelper
-import java.net.URL
 
 
 class WebViewActivity : AppCompatActivity() {

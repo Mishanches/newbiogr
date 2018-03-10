@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">NBiografy</string>
+    <string name="app_name">Легендарный клуб Англии</string>
 
     <string name="web_twitter">Twitter FC MU</string>
     <string name="web_site">Official site FC MU</string>
@@ -10,7 +10,7 @@
     <string name="TvPressText">Нажмитие на эмблему клуба \n или на иконки ниже</string>
 
     <string name="TvPlayer">Игрок</string>
-    <string name="TvBiografyPkayer">Биография</string>
+    <string name="TvBiografyPlayer">Биография</string>
     <string name="TvPhotoPlayer">Фотографии</string>
 
 

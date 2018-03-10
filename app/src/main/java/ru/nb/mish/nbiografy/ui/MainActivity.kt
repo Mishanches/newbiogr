@@ -56,8 +56,8 @@ class MainActivity : AppCompatActivity() { // наследуемся от AppCom
 
     fun onEmblemClick (view:View) { // отдельный клмк для главной иконки
 
-        //val intent = Intent(this, MUChoicePlayers::class.java)
-        // startActivity(intent)
+        val intent = Intent(this, PlayersListActivity::class.java)
+         startActivity(intent)
 
     }
 

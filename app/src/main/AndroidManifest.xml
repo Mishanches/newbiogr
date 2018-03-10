@@ -20,6 +20,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".ui.WebViewActivity"></activity>
+        <activity android:name=".ui.PlayersListActivity"></activity>
     </application>
 
 </manifest>
