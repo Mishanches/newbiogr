@@ -41,6 +41,20 @@
     <string name="TvMatic">N. Matic</string>
     <string name="TvDarmian">M. Darmian</string>
 
+    <string name="TvCoachFrance">М. Карера</string>
+    <string name="TvCoachRussia">Л. Слуцкий</string>
+    <string name="TvCoachPortugal">Л. Энрике</string>
+
+    <string name="TvCoachDiscrFrance">Тренер сборной Франции</string>
+    <string name="TvCoachDiscrRussia">Тренер сборной России</string>
+    <string name="TvCoachDiscrPortugal">Тренер сборной Португалии</string>
+
+    <string name="BtCoachLink">Тренеры</string>
+
+
+
+
+
 
     <string name="TvDeGeaBiografy"> \t<b>  Дави́д де Хе́а Кинта́на</b>
  (исп. David de Gea Quintana,  родился 7 ноября 1990 года в Мадриде) — испанский футболист, вратарь английского клуба «Манчестер Юнайтед» и национальной сборной Испании. Воспитанник «Атлетико Мадрид», с которым выиграл Лигу Европы и Суперкубок УЕФА. В составе «Манчестер Юнайтед» выиграл Премьер-лигу, Кубок Англии, Кубок Футбольной лиги, Лигу Европы УЕФА и три Суперкубка Англии.
@@ -1127,7 +1141,6 @@ C 2012 по 2016 годы Антони встречался с Самантой 
     </string>
 
 
-
     <string name="TvLingradBiografy"> <b>   Jesse Lingrad</b>
 \n
 \n
@@ -2001,7 +2014,6 @@ C 2012 по 2016 годы Антони встречался с Самантой 
 \n
 
 </string>
-
 
 
     <string name="TvMaticBiografy"> <b>   Nemanja Matic</b>

@@ -1,4 +1,4 @@
 package ru.nb.mish.nbiografy.models
 
 // используем Player в Адаптере у PlayersListActivity
-class Player (val image:Int=-1, val name:String="" )
+class Player (image:Int=-1, name:String):Person(image, name)

@@ -60,4 +60,11 @@ class MainActivity : AppCompatActivity() { // наследуемся от AppCom
 
     }
 
+    fun onCoachClick (view:View) { // отдельный клмк для главной иконки
+
+        val intent = Intent(this, CoachsListActivity::class.java)
+        startActivity(intent)
+
+    }
+
 }

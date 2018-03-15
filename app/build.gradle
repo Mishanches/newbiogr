@@ -17,7 +17,7 @@ android {
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     dataBinding {
-        enabled=true
+        enabled = true
     }
     buildTypes {
         release {
@@ -39,5 +39,7 @@ dependencies {
     // ставит биндинги
     implementation 'com.android.support:recyclerview-v7:26.1.0'
 }
+
+
 
 

@@ -19,8 +19,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ui.WebViewActivity"></activity>
-        <activity android:name=".ui.PlayersListActivity"></activity>
-    </application>
+        <activity android:name=".ui.WebViewActivity" />
+        <activity android:name=".ui.PlayersListActivity" />
+        <activity android:name=".ui.CoachsListActivity" />
+        </application>
 
 </manifest>

@@ -6,16 +6,19 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import ru.nb.mish.nbiografy.R
 import ru.nb.mish.nbiografy.components.BindingViewHolder
+import ru.nb.mish.nbiografy.components.OnItemClickListener
 import ru.nb.mish.nbiografy.databinding.ItemPlayerBinding
 import ru.nb.mish.nbiografy.models.Player
 
 
-class PlayerAdapter(val data: ArrayList<Player>): RecyclerView.Adapter<BindingViewHolder<ItemPlayerBinding>> (){ // (VH) - параметр. типы
+class PlayerAdapter(val data: ArrayList<Player>, val onItemClickListener: OnItemClickListener<Player>): RecyclerView.Adapter<BindingViewHolder<ItemPlayerBinding>> (){
     override fun onBindViewHolder(holder: BindingViewHolder<ItemPlayerBinding>, position: Int) {
         // заполняем данные по игрокам
         val player = data[position]
         holder.mLayoutBinding.tvPlayer.text=player.name
         holder.mLayoutBinding.ivPlayer.setImageResource(player.image)
+
+        holder.itemView.setOnClickListener { onItemClickListener.onItemClick(data[holder.adapterPosition]) }  // itemView - картинка + текст
     }
 
     // создает View для элемента списка
