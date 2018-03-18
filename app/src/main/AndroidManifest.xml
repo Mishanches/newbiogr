@@ -22,6 +22,7 @@
         <activity android:name=".ui.WebViewActivity" />
         <activity android:name=".ui.PlayersListActivity" />
         <activity android:name=".ui.CoachsListActivity" />
+        <activity android:name=".ui.PlayerDetailActivity" />
         </application>
 
 </manifest>
