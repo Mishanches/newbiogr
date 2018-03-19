@@ -18,14 +18,19 @@ class PlayerDetailActivity : AppCompatActivity() {
 
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
-        navigation.setOnNavigationItemSelectedListener {
+        navigation.setOnNavigationItemSelectedListener { // обработчик BottomNavigation
             when (it.itemId) {
                 R.id.itemPhoto -> {
 
                     supportFragmentManager
+                            // подключаем менеджер фрагментов
+                            // вставляем фрагмент, заменяя текущий фрагмент
                     .beginTransaction()
                     .replace(R.id.content, PlayerMainPhotoFragment.newInstance(intent.getIntExtra(PHOTO_ID, -1)))
+                            // newInstance - динамическое создание экземпляра, получаем PHOTO_ID из PlayerMainPhotoFragment
                     .commit()
+
+                    title = it.getTitle() // указвает Title в ActionBar
 
                 }
 
@@ -36,13 +41,15 @@ class PlayerDetailActivity : AppCompatActivity() {
                             .replace(R.id.content, PlayerBiografyFragment.newInstance(intent.getStringExtra(BIOGRAFY)))
                             .commit()
 
+                    title = it.getTitle()
+
                 }
 
             }
             true
         }
 
-        navigation.selectedItemId = R.id.itemPhoto
+        navigation.selectedItemId = R.id.itemPhoto // указываем, что изначально будет фрагмент с фото-анфас(а не, напр., биография)
 
     }
 

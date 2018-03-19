@@ -54,12 +54,14 @@ class PlayersListActivity : AppCompatActivity() {
 
             override fun onItemClick(item: Player) {
                 startActivity(Intent(this@PlayersListActivity, PlayerDetailActivity::class.java)
-                        .putExtra("photoId", item.anfasPhoto))
-                        // тут нужно передать Титле
+                        .putExtra("photoId", item.anfasPhoto)
+                        .putExtra("biografyId", item.biografyText))
             }
         })
 
         supportActionBar?.setDisplayHomeAsUpEnabled(true) // кнопка назад наверху
+
+
 
 
     }
