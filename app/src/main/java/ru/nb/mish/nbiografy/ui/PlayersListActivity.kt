@@ -60,6 +60,7 @@ class PlayersListActivity : AppCompatActivity() {
         })
 
         supportActionBar?.setDisplayHomeAsUpEnabled(true) // кнопка назад наверху
+        supportActionBar?.setTitle("Выбор игрока") // устанавливаем новый Title для страницы
 
 
 

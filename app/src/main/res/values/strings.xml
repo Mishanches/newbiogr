@@ -12,6 +12,7 @@
     <string name="TvPlayer">Игрок</string>
     <string name="TvBiografyPlayer">Биография</string>
     <string name="TvPhotoPlayer">Фотографии</string>
+    <string name="TvTitleChoicePlayer">Выбор игрока</string>
 
 
     <string name="TvGea">D. De Gea</string>
