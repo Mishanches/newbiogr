@@ -3,13 +3,14 @@ package ru.nb.mish.nbiografy.ui.fragments
 
 import android.os.Bundle
 import android.support.v4.app.Fragment
+import android.text.Html
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import kotlinx.android.synthetic.main.fragment_player_biografy.*
 
 import ru.nb.mish.nbiografy.R
-
+import ru.nb.mish.nbiografy.components.IntentHelper
 
 
 class PlayerBiografyFragment : Fragment() {
@@ -19,8 +20,8 @@ class PlayerBiografyFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        if (arguments != null) {
-            biografyId = arguments.getString(ARG_BIOGRAFY_ID)
+        if (arguments != null) { // получаем саму строку, которую передали
+            biografyId = arguments.getString(IntentHelper.BIOGRAFY)
 
         }
     }
@@ -33,19 +34,15 @@ class PlayerBiografyFragment : Fragment() {
 
     override fun onViewCreated(view: View?, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        tvBiografyText.setText(biografyId)
+        tvBiografyText.setText(Html.fromHtml(biografyId)) // передаем текст в виде HTML
     }
 
     companion object {
-        private val ARG_BIOGRAFY_ID = "biografyId"
 
-
-
-
-        fun newInstance(biografyId: String): PlayerBiografyFragment {
+        fun newInstance(biografyId: String): PlayerBiografyFragment { // передаем сам текст биографии
             val fragment = PlayerBiografyFragment()
-            val args = Bundle()
-            args.putString(ARG_BIOGRAFY_ID, biografyId)
+            val args = Bundle() // список перменных
+            args.putString(IntentHelper.BIOGRAFY, biografyId) // biografyId - сама перменная, которую передаем, IntentHelper.BIOGRAFY - сам текст
             fragment.arguments = args
             return fragment
         }

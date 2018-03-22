@@ -1,14 +1,17 @@
 package ru.nb.mish.nbiografy.ui
 
 import android.content.Intent
+import android.content.res.Configuration
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.DividerItemDecoration
+import android.support.v7.widget.GridLayoutManager
 import android.support.v7.widget.LinearLayoutManager
 import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_players_list.*
 import ru.nb.mish.nbiografy.R
 import ru.nb.mish.nbiografy.adapters.PlayerAdapter
+import ru.nb.mish.nbiografy.components.IntentHelper
 import ru.nb.mish.nbiografy.components.OnItemClickListener
 import ru.nb.mish.nbiografy.models.Coach
 import ru.nb.mish.nbiografy.models.Player
@@ -19,12 +22,17 @@ class PlayersListActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_players_list)
 
-        rvPlayers.layoutManager=LinearLayoutManager(this) // подключаем RecView
+        rvPlayers.layoutManager= GridLayoutManager(this, 1) // подключаем RecView из activity_players_list.xml
+                // GridLayoutManager - отвечает за кол-во столбцов
+
+        // вызываем метод при создании активити (ниже- сам этот метод, тут он только вызывается)
+        updateSpanCount(resources.configuration.orientation)
+
 
         // устанавливаем горизонт разделитель между игроками в RyecycleView
         rvPlayers.addItemDecoration(DividerItemDecoration(this, LinearLayoutManager.VERTICAL))
 
-        // к адаптеру подкдючаем все икоенки футболистов и их имена
+        // к адаптеру подкдючаем все иконки футболистов, их имена (и прочие элементы, которые нам понадобятся уже НЕ для этого листа)
         rvPlayers.adapter = PlayerAdapter(arrayListOf(
                 Player(R.drawable.icon_bailly, getString(R.string.TvBailly), R.drawable.anfas_bailly,getString(R.string.TvBaillyBiografy)),
                 Player(R.drawable.icon_blind, getString(R.string.TvBlind), R.drawable.anfas_blind,getString(R.string.TvBlindBiografy)),
@@ -52,19 +60,34 @@ class PlayersListActivity : AppCompatActivity() {
                 Player(R.drawable.icon_young, getString(R.string.TvYoung), R.drawable.anfas_young,getString(R.string.TvYoungBiografy))),
                 object : OnItemClickListener<Player>{
 
-            override fun onItemClick(item: Player) {
-                startActivity(Intent(this@PlayersListActivity, PlayerDetailActivity::class.java)
-                        .putExtra("photoId", item.anfasPhoto)
-                        .putExtra("biografyId", item.biografyText))
+
+                    // обработчик нажатий BottomNavigation
+                    override fun onItemClick(item: Player) {
+                    startActivity(Intent(this@PlayersListActivity, PlayerDetailActivity::class.java)
+                            //вставляем Фото_анфас и биографию
+                        .putExtra(IntentHelper.PHOTO_ID, item.anfasPhoto)
+                        .putExtra(IntentHelper.BIOGRAFY, item.biografyText))
             }
         })
 
         supportActionBar?.setDisplayHomeAsUpEnabled(true) // кнопка назад наверху
         supportActionBar?.setTitle("Выбор игрока") // устанавливаем новый Title для страницы
 
+    }
 
+    // метод смены кол-ва столбцов в зависимости от ориент. экрана
+    fun updateSpanCount(orientation: Int?) {
+        when(orientation) {
+            // если горизонт. экран , то кол-во столбцов 1, если верт. - 1
+            Configuration.ORIENTATION_LANDSCAPE -> (rvPlayers.layoutManager as GridLayoutManager).spanCount=2
+            Configuration.ORIENTATION_PORTRAIT-> (rvPlayers.layoutManager as GridLayoutManager).spanCount=1
+        }
+    }
 
-
+     // метод, когда вращается текущий экран
+    override fun onConfigurationChanged(newConfig: Configuration?) {
+        super.onConfigurationChanged(newConfig)
+        updateSpanCount(newConfig?.orientation)
     }
 
     override fun onSupportNavigateUp(): Boolean { // функция кнопки назад

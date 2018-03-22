@@ -10,15 +10,23 @@ import ru.nb.mish.nbiografy.components.OnItemClickListener
 import ru.nb.mish.nbiografy.databinding.ItemPlayerBinding
 import ru.nb.mish.nbiografy.models.Player
 
-
+// RecyclerView.Adapter<BindingViewHolder<ItemPlayerBinding>> наследуемся от адаптера
+// ItemPlayerBinding - сист. класс, который создался с помощью Binding
+// этот класс создался на основе xml, в которой мы "обернули " данные в <layout>(это item_player)
 class PlayerAdapter(val data: ArrayList<Player>, val onItemClickListener: OnItemClickListener<Player>): RecyclerView.Adapter<BindingViewHolder<ItemPlayerBinding>> (){
-    override fun onBindViewHolder(holder: BindingViewHolder<ItemPlayerBinding>, position: Int) {
-        // заполняем данные по игрокам
-        val player = data[position]
-        holder.mLayoutBinding.tvPlayer.text=player.name
-        holder.mLayoutBinding.ivPlayer.setImageResource(player.image)
 
-        holder.itemView.setOnClickListener { onItemClickListener.onItemClick(data[holder.adapterPosition]) }  // itemView - картинка + текст
+   //переопределяем метод onBindViewHolder
+    override fun onBindViewHolder(holder: BindingViewHolder<ItemPlayerBinding>, position: Int) {
+        // заполняем данные по игрокам: что именно будем подтягивать по игрокам, т.к.
+       // в rvPlayers.adapter = PlayerAdapter(arrayListOf) (из PlayersActivity) можно хранить и другие
+       // данные по игрокам (например, текс биографии), которые в List мы не используем)
+        val player = data[position] // позиция
+        holder.mLayoutBinding.tvPlayer.text=player.name // имя
+        holder.mLayoutBinding.ivPlayer.setImageResource(player.image) // его картинка (круглая)
+
+       // обработчик нажатий по картинке или тексту, где
+       // itemView = картинка + текст
+        holder.itemView.setOnClickListener { onItemClickListener.onItemClick(data[holder.adapterPosition]) }
     }
 
     // создает View для элемента списка
