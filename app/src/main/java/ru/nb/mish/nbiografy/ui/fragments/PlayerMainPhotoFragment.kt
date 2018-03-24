@@ -19,18 +19,18 @@ class PlayerMainPhotoFragment : Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         if (arguments != null) {
-            photoId = arguments.getInt(ARG_PHOTO_ID)
+            photoId = arguments!!.getInt(ARG_PHOTO_ID)
 
         }
     }
 
-    override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?,
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
 
         return inflater!!.inflate(R.layout.fragment_player_main_photo, container, false)
     }
 
-    override fun onViewCreated(view: View?, savedInstanceState: Bundle?) {
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         ivPlayer.setImageResource(photoId)
 

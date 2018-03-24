@@ -9,8 +9,10 @@ import android.support.v4.view.ViewPager
 import kotlinx.android.synthetic.main.activity_player_detail.*
 
 import ru.nb.mish.nbiografy.R
+import ru.nb.mish.nbiografy.components.IntentHelper
 import ru.nb.mish.nbiografy.components.IntentHelper.BIOGRAFY
 import ru.nb.mish.nbiografy.components.IntentHelper.PHOTO_ID
+import ru.nb.mish.nbiografy.ui.fragments.GalleryFragment
 import ru.nb.mish.nbiografy.ui.fragments.PlayerBiografyFragment
 import ru.nb.mish.nbiografy.ui.fragments.PlayerMainPhotoFragment
 
@@ -30,6 +32,7 @@ class PlayerDetailActivity : AppCompatActivity() {
 
         pagerDetail = PagerDetail(intent.getIntExtra(PHOTO_ID, -1),
                 intent.getStringExtra(BIOGRAFY),
+                intent.getStringArrayListExtra(IntentHelper.IMAGE_GALLERY),
                 supportFragmentManager)
 
         viewPager.adapter = pagerDetail // ViewPager-у присвоили адаптер
@@ -37,7 +40,7 @@ class PlayerDetailActivity : AppCompatActivity() {
         // отслеживатель для листаний
         viewPager.addOnPageChangeListener(object : ViewPager.OnPageChangeListener
         {
-            // из 3-ех методов нужн только 1 - самый последний
+            // из 3-ех методов нужен только 1 - самый последний
             // сосотяние скрола
             override fun onPageScrollStateChanged(state: Int) {
 
@@ -53,7 +56,8 @@ class PlayerDetailActivity : AppCompatActivity() {
                 when(position) {
                     0 ->  navigation.selectedItemId = R.id.itemPhoto
                     1 ->  navigation.selectedItemId = R.id.itemBiografy
-                }
+                    2 -> navigation.selectedItemId = R.id.itemAllPhoto
+                } // попробовать закоментиоовать
 
             }
 
@@ -78,6 +82,16 @@ class PlayerDetailActivity : AppCompatActivity() {
 
                 }
 
+                R.id.itemAllPhoto -> {
+
+                    viewPager.currentItem = 2
+
+                    title = it.getTitle()
+
+                }
+
+
+
             }
             true
         }
@@ -92,12 +106,13 @@ class PlayerDetailActivity : AppCompatActivity() {
 
     }
 
-    class PagerDetail(val photoId: Int, val biografy: String, fm: FragmentManager): FragmentStatePagerAdapter(fm) {
+    class PagerDetail(val photoId: Int, val biografy: String, val photos: ArrayList<String>, fm: FragmentManager): FragmentStatePagerAdapter(fm) {
         override fun getItem(position: Int): Fragment? { // метод использ. для создания фрагментов
             when(position) {
                 0 -> return PlayerMainPhotoFragment.newInstance(photoId) // если нажали самый первую иконку( т.е. 0), то
                 // фрагмент будет с Фото_анфас
                 1 -> return PlayerBiografyFragment.newInstance(biografy) // и т.д.
+                2 -> return GalleryFragment.newInstance(photos) // и т.д.
                 else -> return null
             }
         }

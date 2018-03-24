@@ -21,18 +21,19 @@ class PlayerBiografyFragment : Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         if (arguments != null) { // получаем саму строку, которую передали
-            biografyId = arguments.getString(IntentHelper.BIOGRAFY)
+            biografyId = arguments!!.getString(IntentHelper.BIOGRAFY)
 
         }
     }
 
-    override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?,
-                              savedInstanceState: Bundle?): View? {
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
+                              savedInstanceState: Bundle?): View? { // аналог onCreate в активити
 
         return inflater!!.inflate(R.layout.fragment_player_biografy, container, false)
     }
 
-    override fun onViewCreated(view: View?, savedInstanceState: Bundle?) {
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) { // после создания пустого Вью, а потом
+        // создаем картинку(фото анфас)
         super.onViewCreated(view, savedInstanceState)
         tvBiografyText.setText(Html.fromHtml(biografyId)) // передаем текст в виде HTML
     }
