@@ -117,7 +117,7 @@ class PlayerDetailActivity : AppCompatActivity() {
             }
         }
 
-        override fun getCount(): Int = 2 // вместо "{return 2}"
+        override fun getCount(): Int = 3 // вместо "{return 3}"
 
     }
 }

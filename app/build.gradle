@@ -8,12 +8,15 @@ apply plugin: 'kotlin-kapt'
 
 android {
     compileSdkVersion 26
-    defaultConfig {
+        defaultConfig {
         applicationId "ru.nb.mish.nbiografy"
         minSdkVersion 16
         targetSdkVersion 26
         versionCode 1
         versionName "1.0"
+            dexOptions {
+                javaMaxHeapSize "2g"
+            }
     }
 
     dataBinding {
@@ -42,7 +45,6 @@ dependencies {
 
     implementation 'com.android.support:recyclerview-v7:26.1.0'
 }
-
 
 
 
