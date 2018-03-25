@@ -51,6 +51,7 @@ class WebViewActivity : AppCompatActivity() {
             return true
         }
 
+
         return super.onKeyDown(keyCode, event)
     }
 }

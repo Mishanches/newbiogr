@@ -158,6 +158,7 @@ class PlayersListActivity : AppCompatActivity() {
         }
     }
 
+
      // метод, когда вращается текущий экран
     override fun onConfigurationChanged(newConfig: Configuration?) {
         super.onConfigurationChanged(newConfig)
