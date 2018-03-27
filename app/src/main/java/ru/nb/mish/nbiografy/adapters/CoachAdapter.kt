@@ -14,7 +14,7 @@ class CoachAdapter(val data: ArrayList<Coach>): RecyclerView.Adapter<BindingView
 
     override fun getItemCount(): Int = data.size // возвращаем кол-во игроков
 
-    override fun onCreateViewHolder(parent: ViewGroup?, viewType: Int): BindingViewHolder<ItemCoachBinding> {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BindingViewHolder<ItemCoachBinding> {
         val listItemBinding= DataBindingUtil.inflate<ItemCoachBinding>(LayoutInflater.from(parent?.context),
                 R.layout.item_coach, parent, false)
         return BindingViewHolder(listItemBinding) // создам item и разварачиваем его
