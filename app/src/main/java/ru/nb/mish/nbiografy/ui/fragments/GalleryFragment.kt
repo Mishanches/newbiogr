@@ -20,6 +20,7 @@ import ru.nb.mish.nbiografy.adapters.GalleryAdapter
 import ru.nb.mish.nbiografy.components.IntentHelper
 import ru.nb.mish.nbiografy.components.IntentHelper.IMAGE_GALLERY
 import ru.nb.mish.nbiografy.components.OnItemClickListener
+import ru.nb.mish.nbiografy.ui.FullImageActivity
 
 
 class GalleryFragment : Fragment() {
@@ -35,11 +36,17 @@ class GalleryFragment : Fragment() {
         rvImages.layoutManager = GridLayoutManager(activity, 2) // подключаем RecView из activity_players_list.xml
         // GridLayoutManager - отвечает за кол-во столбцов
 
-        rvImages.adapter = GalleryAdapter(arguments?.getStringArrayList(IntentHelper.IMAGE_GALLERY)!!, object : OnItemClickListener<String> {
+        val images = arguments?.getStringArrayList(IntentHelper.IMAGE_GALLERY)!!
+
+        rvImages.adapter = GalleryAdapter(images,
+                object : OnItemClickListener<String> {
 
 
-            // обработчик нажатий BottomNavigation
+            // клик на кратинку в галереи
             override fun onItemClick(item: String) {
+                startActivity(Intent(activity, FullImageActivity::class.java)
+                        //вставляем Фото_анфас и биографию b
+                        .putExtra(IntentHelper.IMAGE_GALLERY, images))
 
             }
         })

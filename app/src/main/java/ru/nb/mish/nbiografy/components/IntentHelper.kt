@@ -9,4 +9,5 @@ object IntentHelper {
     val PHOTO_ID = "photoId"
     val BIOGRAFY = "biografyId"
     val IMAGE_GALLERY = "imagrgallery"
+    val PHOTO_URL = "photo_url"
 }

@@ -24,6 +24,7 @@
             android:configChanges="orientation"/> <!-- сами будем обраб. изменение ориентации -->
         <activity android:name=".ui.CoachsListActivity" />
         <activity android:name=".ui.PlayerDetailActivity" />
+        <activity android:name=".ui.FullImageActivity" />
         </application>
 
 </manifest>

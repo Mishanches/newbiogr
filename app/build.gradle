@@ -8,15 +8,15 @@ apply plugin: 'kotlin-kapt'
 
 android {
     compileSdkVersion 27
-        defaultConfig {
+    defaultConfig {
         applicationId "ru.nb.mish.nbiografy"
         minSdkVersion 16
         targetSdkVersion 27
         versionCode 1
         versionName "1.0"
-            dexOptions {
-                javaMaxHeapSize "2g"
-            }
+        dexOptions {
+            javaMaxHeapSize "2g"
+        }
     }
 
     dataBinding {
@@ -44,7 +44,11 @@ dependencies {
     annotationProcessor 'com.github.bumptech.glide:compiler:4.6.1'
 
     implementation 'com.android.support:recyclerview-v7:27.1.0'
+
+    implementation 'com.github.chrisbanes:PhotoView:2.1.3'
+
 }
+
 
 
 
