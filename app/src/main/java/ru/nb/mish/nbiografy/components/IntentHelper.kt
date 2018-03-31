@@ -10,4 +10,5 @@ object IntentHelper {
     val BIOGRAFY = "biografyId"
     val IMAGE_GALLERY = "imagrgallery"
     val PHOTO_URL = "photo_url"
+    val IMAGE_POS = "imagePos"
 }

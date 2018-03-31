@@ -23,9 +23,9 @@ class CoachsListActivity: AppCompatActivity() {
 
         // к адаптеру подкдючаем все икоенки тренеров, их имена и описание
         rvCoachs.adapter = CoachAdapter(arrayListOf(
-                Coach(R.drawable.coach_russia, getString(R.string.TvCoachFrance), getString(R.string.TvCoachDiscrFrance)),
-                Coach(R.drawable.coach_france, getString(R.string.TvCoachRussia), getString(R.string.TvCoachDiscrRussia)),
-                Coach(R.drawable.coach_portugal, getString(R.string.TvCoachPortugal), getString(R.string.TvCoachDiscrPortugal))
+                Coach(R.drawable.anfas_bailly, getString(R.string.TvCoachFrance), getString(R.string.TvCoachDiscrFrance)), // заменить потом фото
+                Coach(R.drawable.anfas_bailly, getString(R.string.TvCoachRussia), getString(R.string.TvCoachDiscrRussia)),
+                Coach(R.drawable.anfas_bailly, getString(R.string.TvCoachPortugal), getString(R.string.TvCoachDiscrPortugal))
                 ))
 
     }

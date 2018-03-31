@@ -30,8 +30,7 @@ class GalleryFragment : Fragment() {
         return inflater.inflate(R.layout.fragment_gallery, container, false)
     }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) { // после создания пустого Вью, а потом
-        // создаем картинку(фото анфас)
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         rvImages.layoutManager = GridLayoutManager(activity, 2) // подключаем RecView из activity_players_list.xml
         // GridLayoutManager - отвечает за кол-во столбцов
@@ -43,10 +42,11 @@ class GalleryFragment : Fragment() {
 
 
             // клик на кратинку в галереи
-            override fun onItemClick(item: String) {
+            override fun onItemClick(item: String) { // item: String передается адрес картинки, по которой мы кликнули
                 startActivity(Intent(activity, FullImageActivity::class.java)
-                        //вставляем Фото_анфас и биографию b
-                        .putExtra(IntentHelper.IMAGE_GALLERY, images))
+                        .putExtra(IntentHelper.IMAGE_GALLERY, images) // передаем список всех картинок тек пользователя
+                        .putExtra(IntentHelper.IMAGE_POS, images.indexOf(item))) // отправляем индекс картинок в списке картинок
+                // indexOf - метод, который ищет во всем списке картинку URL
 
             }
         })
@@ -55,10 +55,10 @@ class GalleryFragment : Fragment() {
 
     companion object {
 
-        fun newInstance(imagesArray: ArrayList<String>): GalleryFragment { // передаем сам текст биографии
+        fun newInstance(imagesArray: ArrayList<String>): GalleryFragment {
             val fragment = GalleryFragment()
             val args = Bundle() // список перменных
-            args.putStringArrayList(IntentHelper.IMAGE_GALLERY, imagesArray) // biografyId - сама перменная, которую передаем, IntentHelper.BIOGRAFY - сам текст
+            args.putStringArrayList(IntentHelper.IMAGE_GALLERY, imagesArray)
             fragment.arguments = args
             return fragment
         }

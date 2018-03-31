@@ -13,6 +13,12 @@
     <string name="TvBiografyPlayer">Биография</string>
     <string name="TvPhotoPlayer">Фотографии</string>
     <string name="TvTitleChoicePlayer">Выбор игрока</string>
+    <string name="TvTitleFullImage">Фотография игрока</string>
+
+    <string name="TvOnboardingSlide1Title">Посмотреть игроков</string>
+    <string name="TvOnboardingSlide1Discr">Чтобы перейти к выбору игрока, нажмите на иконку эмблемы клуба</string>
+    <string name="TvOnboardingSlide2Title">Социальные сети</string>
+    <string name="TvOnboardingSlide2Discr">Чтобы перейти на официальныую страницу клуба, нажмите на одну из иконок</string>
 
 
     <string name="TvGea">D. De Gea</string>

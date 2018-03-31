@@ -9,41 +9,20 @@
     tools:context="ru.nb.mish.nbiografy.ui.MainActivity">
 
 
-    <TextView
-        android:id="@+id/TvPressText"
-        android:layout_width="347dp"
-        android:layout_height="47dp"
-        android:layout_marginBottom="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginTop="8dp"
-        android:gravity="center"
-        android:text="@string/TvPressText"
-        android:textColor="#F5E700"
-        android:textSize="16sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.523"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.651" />
-
-
     <ImageView
         android:id="@+id/IvMainEmblem"
-        android:layout_width="193dp"
-        android:layout_height="178dp"
+        android:layout_width="206dp"
+        android:layout_height="196dp"
         android:layout_marginBottom="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginTop="8dp"
         android:onClick="onEmblemClick"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.338"
+        app:layout_constraintVertical_bias="0.334"
         app:srcCompat="@drawable/main_emblem" />
 
     <ImageView
@@ -58,12 +37,12 @@
         android:layout_marginTop="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.521"
+        app:layout_constraintHorizontal_bias="0.51"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.795"
+        app:layout_constraintVertical_bias="0.737"
         app:srcCompat="@drawable/string_mu" />
 
     <ImageView
@@ -144,30 +123,14 @@
         android:layout_marginTop="8dp"
         android:gravity="center"
         android:text="@string/TvMainText"
-        android:textColor="#ffffff"
-        android:textSize="22dp"
+        android:textColor="#FFF111"
+        android:textSize="24dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.078" />
+        app:layout_constraintVertical_bias="0.055" />
 
-    <Button
-        android:id="@+id/BtCoachLink"
-        android:layout_width="103dp"
-        android:layout_height="42dp"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:text="@string/BtCoachLink"
-        android:onClick="onCoachClick"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.96"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.192" />
 
 
 </android.support.constraint.ConstraintLayout>

@@ -12,7 +12,7 @@ import ru.nb.mish.nbiografy.models.Coach
 
 class CoachAdapter(val data: ArrayList<Coach>): RecyclerView.Adapter<BindingViewHolder<ItemCoachBinding>>() {
 
-    override fun getItemCount(): Int = data.size // возвращаем кол-во игроков
+    override fun getItemCount(): Int = data.size // возвращаем кол-во тренеров
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BindingViewHolder<ItemCoachBinding> {
         val listItemBinding= DataBindingUtil.inflate<ItemCoachBinding>(LayoutInflater.from(parent?.context),
@@ -20,11 +20,13 @@ class CoachAdapter(val data: ArrayList<Coach>): RecyclerView.Adapter<BindingView
         return BindingViewHolder(listItemBinding) // создам item и разварачиваем его
     }
 
+
+    // создает View для элемента списка
     override fun onBindViewHolder(holder: BindingViewHolder<ItemCoachBinding>, position: Int) {
         // заполняем данные по тренерам
         val coach = data[position]
         holder.mLayoutBinding.tvCoach.text=coach.name // имя
-        holder.mLayoutBinding.ivCoach.setImageResource(coach.image) // картинка
+        //holder.mLayoutBinding.ivCoach.setImageResource(coach.image) // картинка
         holder.mLayoutBinding.tvCoachDiscr.text=coach.discrCoach // описание
 
     }

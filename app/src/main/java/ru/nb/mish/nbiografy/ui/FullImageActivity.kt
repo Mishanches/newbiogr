@@ -18,11 +18,16 @@ class FullImageActivity : AppCompatActivity() {
         setContentView(R.layout.activity_full_image)
 
 
-        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true) // кнопка назад
+        supportActionBar?.setTitle(getString(R.string.TvTitleFullImage)) // ставим титл
+
 
         viewPager.adapter = ImageAdapter(
                 intent.getStringArrayListExtra(IntentHelper.IMAGE_GALLERY),
                 supportFragmentManager) // компановка фраментов внутри активити
+
+        viewPager.currentItem = intent.getIntExtra(IntentHelper.IMAGE_POS, -1)
+                // выставляем pager на нужную позицию
 
 
     }

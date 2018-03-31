@@ -32,7 +32,7 @@ class PlayerBiografyFragment : Fragment() {
         return inflater!!.inflate(R.layout.fragment_player_biografy, container, false)
     }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) { // после создания пустого Вью, а потом
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) { // после создания пустого Вью
         // создаем картинку(фото анфас)
         super.onViewCreated(view, savedInstanceState)
         tvBiografyText.setText(Html.fromHtml(biografyId)) // передаем текст в виде HTML

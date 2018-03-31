@@ -19,11 +19,12 @@ class WebViewActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_web_view)
 
-        val webSettings = webView.settings // поддержка javaScript
+        // поддержка javaScript
+        val webSettings = webView.settings
         webSettings.javaScriptEnabled = true
 
-        webView.webViewClient = object: WebViewClient() { // object: - создаем анон. класс, унаследованный от WebViewClient()
-            // и сразу присваиваем webView
+        webView.webViewClient = object: WebViewClient() { // object: - создаем анонимный класс, унаследованный от WebViewClient()
+            // и сразу присваиваем webView (который в activity_web_view.xml)
 
             override fun shouldOverrideUrlLoading(webView: WebView, url: String): Boolean {
                 // все ссылки, в которых содержится названия сайтов
@@ -39,7 +40,11 @@ class WebViewActivity : AppCompatActivity() {
             }
         }
 
-        title = intent.getStringExtra(IntentHelper.EXTRA_TITLE) // получаем title
+
+        // в onCreate "принимаем"
+        // title сразу присваиваем строку, полученную от MainActivity (например, web_twitter)
+        title = intent.getStringExtra(IntentHelper.EXTRA_TITLE)
+        // в webView (который в activity_web_view.xml) загружаем интент, в котором получаем ссдку
         webView.loadUrl(intent.getStringExtra(IntentHelper.EXTRA_URL)) // и ссылку
     }
 
@@ -50,7 +55,6 @@ class WebViewActivity : AppCompatActivity() {
             this.webView.goBack()
             return true
         }
-
 
         return super.onKeyDown(keyCode, event)
     }

@@ -10,6 +10,7 @@ import android.support.v7.widget.LinearLayoutManager
 import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_players_list.*
 import ru.nb.mish.nbiografy.R
+import ru.nb.mish.nbiografy.R.string.TvTitleChoicePlayer
 import ru.nb.mish.nbiografy.adapters.PlayerAdapter
 import ru.nb.mish.nbiografy.components.ImagesHelper
 import ru.nb.mish.nbiografy.components.IntentHelper
@@ -24,19 +25,24 @@ class PlayersListActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_players_list)
 
-        rvPlayers.layoutManager= GridLayoutManager(this, 1) // подключаем RecView из activity_players_list.xml
-                // GridLayoutManager - отвечает за кол-во столбцов
+        rvPlayers.layoutManager = GridLayoutManager(this, 1)
+        // подключаем RecView(это RecycleView из activity_players_list.xml)
+        // к этому RecView "добавляем" layoutManager, в котором есть несколько разновидностей, один из
+        // них - GridLayoutManager, который  отвечает за кол-во столбцов
 
-        // вызываем метод при создании активити (ниже- сам этот метод, тут он только вызывается)
+        // вызываем метод смены кол-ва столбцов в завиисимости от ориентации экрана
+        // метод указываем при создании активити (ниже, после onCreate - сам этот метод, тут он только вызывается)
         updateSpanCount(resources.configuration.orientation)
 
 
         // устанавливаем горизонт разделитель между игроками в RyecycleView
         rvPlayers.addItemDecoration(DividerItemDecoration(this, LinearLayoutManager.VERTICAL))
 
-        // к адаптеру подкдючаем все иконки футболистов, их имена (и прочие элементы, которые нам понадобятся уже НЕ для этого листа)
+        // к адаптеру подкдючаем иконки футболистов, их имена (и прочие элементы, которые нам понадобятся уже НЕ для этого листа)
+        // тут мы просто указали Адаптер, из него можно брать любые данные, не обязательно все сразу,
+        // например, для активности с игроками на красном фоне мы берем из адаптера только Иконку и Имя
         rvPlayers.adapter = PlayerAdapter(arrayListOf(
-                Player(R.drawable.icon_bailly, getString(R.string.TvBailly), R.drawable.anfas_bailly,getString(R.string.TvBaillyBiografy),
+                Player(R.drawable.icon_bailly, getString(R.string.TvBailly), R.drawable.anfas_bailly, getString(R.string.TvBaillyBiografy),
                         ImagesHelper.IMAGES_BAILLY ),
                 Player(R.drawable.icon_blind, getString(R.string.TvBlind), R.drawable.anfas_blind,getString(R.string.TvBlindBiografy),
                         ImagesHelper.IMAGES_BLIND),
@@ -88,32 +94,39 @@ class PlayersListActivity : AppCompatActivity() {
                 object : OnItemClickListener<Player>{
 
 
-            // обработчик нажатий BottomNavigation
-            override fun onItemClick(item: Player) {
+            // обработчик нажатий по игрокам (на красном фоне)
+            override fun onItemClick(item: Player) { //нажимаем на игрока
                 startActivity(Intent(this@PlayersListActivity, PlayerDetailActivity::class.java)
-                        //вставляем Фото_анфас и биографию b
+                        // передаем данные в новую активность PlayerDetailActivity и
+                        //вставляем информацию по конкретному игроку: Фото_анфас, биографию и галерея
                         .putExtra(IntentHelper.PHOTO_ID, item.anfasPhoto)
+                        // IntentHelper.PHOTO_ID - это надпись (или идентификатор), а
+                        // item.anfasPhoto - это из конструктора models.Player 3-ий элемент, который отвечает
+                        // за подтягиваемую фотографию к фото анфас
                         .putExtra(IntentHelper.BIOGRAFY, item.biografyText)
+                        // тут аналогично: IntentHelper.BIOGRAFY - это надпись (или идентификатор)
+                        // item.biografyText - 4-ый элемент из конструктора, который отвечает за текст биографии
                         .putExtra(IntentHelper.IMAGE_GALLERY, item.imagesList))
+                // item.imagesList - 5-ый элемент из конструктора, отвечающий за список ссылок на фото (ArrayList)
             }
         })
 
         supportActionBar?.setDisplayHomeAsUpEnabled(true) // кнопка назад наверху
-        supportActionBar?.setTitle("Выбор игрока") // устанавливаем новый Title для страницы
+        supportActionBar?.setTitle(getString(TvTitleChoicePlayer)) // устанавливаем новый Title для страницы
 
     }
 
-    // метод смены кол-ва столбцов в зависимости от ориент. экрана
+    // метод смены кол-ва столбцов в зависимости от ориент. экрана ПРИ ЗАПУСКЕ приложения
     fun updateSpanCount(orientation: Int?) {
         when(orientation) {
-            // если горизонт. экран , то кол-во столбцов 1, если верт. - 1
-            Configuration.ORIENTATION_LANDSCAPE -> (rvPlayers.layoutManager as GridLayoutManager).spanCount=2
-            Configuration.ORIENTATION_PORTRAIT-> (rvPlayers.layoutManager as GridLayoutManager).spanCount=1
+            // если горизонт. экран , то кол-во столбцов 2, если верт. - 1
+             Configuration.ORIENTATION_LANDSCAPE -> (rvPlayers.layoutManager as GridLayoutManager).spanCount=2
+             Configuration.ORIENTATION_PORTRAIT-> (rvPlayers.layoutManager as GridLayoutManager).spanCount=1
         }
     }
 
 
-     // метод, когда вращается текущий экран
+     // метод, когда вращается экран уже в запущеном приложении
     override fun onConfigurationChanged(newConfig: Configuration?) {
         super.onConfigurationChanged(newConfig)
         updateSpanCount(newConfig?.orientation)

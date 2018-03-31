@@ -28,8 +28,8 @@ class GalleryAdapter (val images: List<String>, val onItemClickListener: OnItemC
         // into(holder.mLayoutBinding.imageView) - в какой imageView мы закгружаем картинку
 
 
-
-        holder.itemView.setOnClickListener { onItemClickListener.onItemClick(images[holder.adapterPosition]) }  // itemView - картинка + текст
+        // itemView - картинка + текст
+        holder.itemView.setOnClickListener { onItemClickListener.onItemClick(images[holder.adapterPosition]) }
     }
 
     // создает View для элемента списка

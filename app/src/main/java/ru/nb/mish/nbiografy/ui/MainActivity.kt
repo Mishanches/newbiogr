@@ -2,16 +2,39 @@ package ru.nb.mish.nbiografy.ui
 
 import android.content.Intent
 import android.os.Bundle
+import android.preference.PreferenceManager
 import android.support.v7.app.AppCompatActivity
 import android.view.View
 import ru.nb.mish.nbiografy.R
 import ru.nb.mish.nbiografy.components.IntentHelper
+import ru.nb.mish.nbiografy.onboarding.CustomIntro
 
-class MainActivity : AppCompatActivity() { // наследуемся от AppCompatActivity
+class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        val t = Thread(object : Runnable {
+            override fun run() {
+                val getPrefs = PreferenceManager
+                        .getDefaultSharedPreferences(baseContext)
+
+                val isFirstStart = true //getPrefs.getBoolean(this.toString(), true)
+
+                if (isFirstStart) {
+                    val i = Intent(this@MainActivity, CustomIntro::class.java)
+                    startActivity(i)
+
+                    val e = getPrefs.edit()
+                    e.putBoolean(this.toString(), false)
+                    e.apply()
+                }
+            }
+        })
+
+        // Запускаем поток
+        t.start()
 
 
     }
@@ -23,7 +46,7 @@ class MainActivity : AppCompatActivity() { // наследуемся от AppCom
 
             R.id.IvTwit -> {
                 val intent2 = Intent(this@MainActivity, WebViewActivity::class.java)
-                        // передаем Title и ссылку
+                        // передаем Title и ссылку классу WebViewActivity
                         .putExtra(IntentHelper.EXTRA_TITLE, getString(R.string.web_twitter))
                         .putExtra(IntentHelper.EXTRA_URL,"https://twitter.com/MANUTD")
                 startActivity(intent2)
@@ -53,17 +76,10 @@ class MainActivity : AppCompatActivity() { // наследуемся от AppCom
 
     }
 
-    fun onEmblemClick (view:View) { // отдельный клмк для главной иконки
+    fun onEmblemClick (view:View) { // отдельный клик для главной иконки
 
         val intent = Intent(this, PlayersListActivity::class.java)
          startActivity(intent)
-
-    }
-
-    fun onCoachClick (view:View) { // отдельный клмк кнопки с тренерами
-
-        val intent = Intent(this, CoachsListActivity::class.java)
-        startActivity(intent)
 
     }
 
