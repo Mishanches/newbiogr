@@ -11,4 +11,5 @@ object IntentHelper {
     val IMAGE_GALLERY = "imagrgallery"
     val PHOTO_URL = "photo_url"
     val IMAGE_POS = "imagePos"
+    val ARG_LAYOUT_RES_ID = "layoutResId"
 }

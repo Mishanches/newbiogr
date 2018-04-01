@@ -20,7 +20,7 @@ class MainActivity : AppCompatActivity() {
                 val getPrefs = PreferenceManager
                         .getDefaultSharedPreferences(baseContext)
 
-                val isFirstStart = true //getPrefs.getBoolean(this.toString(), true)
+                val isFirstStart = getPrefs.getBoolean(this.toString(), true)
 
                 if (isFirstStart) {
                     val i = Intent(this@MainActivity, CustomIntro::class.java)

@@ -56,8 +56,6 @@ class PlayersListActivity : AppCompatActivity() {
                         ImagesHelper.IMAGES_FELLAINI),
                 Player(R.drawable.icon_herrera, getString(R.string.TvHerrera), R.drawable.anfas_herrera,getString(R.string.TvHerreraBiografy),
                         ImagesHelper.IMAGES_HERRERA),
-                Player(R.drawable.icon_ibra, getString(R.string.TvIbragimovich), R.drawable.anfas_ibra,getString(R.string.TvIbraBiografy),
-                        ImagesHelper.IMAGES_IBRA),
                 Player(R.drawable.icon_shaw, getString(R.string.TvShaw), R.drawable.anfas_show,getString(R.string.TvShawBiografy),
                         ImagesHelper.IMAGES_SHAW),
                 Player(R.drawable.icon_lindelof, getString(R.string.TvLindelof), R.drawable.anfas_lindelof,getString(R.string.TvLindelofBiografy),
