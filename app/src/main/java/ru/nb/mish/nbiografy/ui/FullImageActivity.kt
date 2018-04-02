@@ -18,32 +18,30 @@ class FullImageActivity : AppCompatActivity() {
         setContentView(R.layout.activity_full_image)
 
 
-        supportActionBar?.setDisplayHomeAsUpEnabled(true) // кнопка назад
-        supportActionBar?.setTitle(getString(R.string.TvTitleFullImage)) // ставим титл
-
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        supportActionBar?.setTitle(getString(R.string.TvTitleFullImage))
 
         viewPager.adapter = ImageAdapter(
                 intent.getStringArrayListExtra(IntentHelper.IMAGE_GALLERY),
-                supportFragmentManager) // компановка фраментов внутри активити
+                supportFragmentManager)
 
         viewPager.currentItem = intent.getIntExtra(IntentHelper.IMAGE_POS, -1)
-                // выставляем pager на нужную позицию
 
 
     }
 
-    override fun onSupportNavigateUp(): Boolean { // функция кнопки назад
+    override fun onSupportNavigateUp(): Boolean {
         onBackPressed()
         return true
 
     }
 
     class ImageAdapter(val imagesArray: ArrayList<String>, fm: FragmentManager): FragmentStatePagerAdapter(fm) {
-        override fun getItem(position: Int): Fragment? { // метод использ. для создания фрагментов
+        override fun getItem(position: Int): Fragment? {
             return FullImageFragment.newInstance(imagesArray[position])
         }
 
-        override fun getCount(): Int = imagesArray.size // возвращаем кол-во картинок во ViewPAger
+        override fun getCount(): Int = imagesArray.size
 
     }
 

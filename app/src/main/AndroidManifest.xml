@@ -22,7 +22,7 @@
         </activity>
         <activity android:name=".ui.WebViewActivity" />
         <activity android:name=".ui.PlayersListActivity"
-            android:configChanges="orientation"/> <!-- сами будем обраб. изменение ориентации -->
+            android:configChanges="orientation"/>
         <activity android:name=".ui.CoachsListActivity" />
         <activity android:name=".ui.PlayerDetailActivity" />
         <activity android:name=".ui.FullImageActivity" />

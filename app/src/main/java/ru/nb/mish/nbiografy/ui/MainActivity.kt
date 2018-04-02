@@ -33,20 +33,17 @@ class MainActivity : AppCompatActivity() {
             }
         })
 
-        // Запускаем поток
         t.start()
-
 
     }
 
-    fun onClick (view:View) { // клик на эмблемы
+    fun onClick (view:View) {
 
-        when (view.id) { // аналог switch
+        when (view.id) {
 
 
             R.id.IvTwit -> {
                 val intent2 = Intent(this@MainActivity, WebViewActivity::class.java)
-                        // передаем Title и ссылку классу WebViewActivity
                         .putExtra(IntentHelper.EXTRA_TITLE, getString(R.string.web_twitter))
                         .putExtra(IntentHelper.EXTRA_URL,"https://twitter.com/MANUTD")
                 startActivity(intent2)
@@ -76,7 +73,7 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-    fun onEmblemClick (view:View) { // отдельный клик для главной иконки
+    fun onEmblemClick (view:View) {
 
         val intent = Intent(this, PlayersListActivity::class.java)
          startActivity(intent)

@@ -16,14 +16,14 @@ class CoachsListActivity: AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_coachs_list)
 
-        rvCoachs.layoutManager= LinearLayoutManager(this) // подключаем RecView
+        rvCoachs.layoutManager= LinearLayoutManager(this)
 
-        // устанавливаем горизонт разделитель между игроками в RyecycleView
+
         rvCoachs.addItemDecoration(DividerItemDecoration(this, LinearLayoutManager.VERTICAL))
 
-        // к адаптеру подкдючаем все икоенки тренеров, их имена и описание
+
         rvCoachs.adapter = CoachAdapter(arrayListOf(
-                Coach(R.drawable.anfas_bailly, getString(R.string.TvCoachFrance), getString(R.string.TvCoachDiscrFrance)), // заменить потом фото
+                Coach(R.drawable.anfas_bailly, getString(R.string.TvCoachFrance), getString(R.string.TvCoachDiscrFrance)),
                 Coach(R.drawable.anfas_bailly, getString(R.string.TvCoachRussia), getString(R.string.TvCoachDiscrRussia)),
                 Coach(R.drawable.anfas_bailly, getString(R.string.TvCoachPortugal), getString(R.string.TvCoachDiscrPortugal))
                 ))

@@ -9,7 +9,7 @@ import ru.nb.mish.nbiografy.ui.MainActivity
 class CustomIntro : AppIntro2() {
     override fun init(savedInstanceState: Bundle?) {
 
-        // Здесь указываем количество слайдов
+
         addSlide(SampleSlide.newInstance(R.layout.onboarding_slide1))
         addSlide(SampleSlide.newInstance(R.layout.onboarding_slide2))
 

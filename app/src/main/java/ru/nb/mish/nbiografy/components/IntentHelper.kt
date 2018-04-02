@@ -1,7 +1,5 @@
 package ru.nb.mish.nbiografy.components
 
-// константы выносим в отдельный файл (для перехода по иконкам на гл. странице и другие)
-
 object IntentHelper {
 
     val EXTRA_TITLE="title"

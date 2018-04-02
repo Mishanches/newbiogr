@@ -7,7 +7,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import kotlinx.android.synthetic.main.fragment_player_main_photo.*
-
 import ru.nb.mish.nbiografy.R
 
 
