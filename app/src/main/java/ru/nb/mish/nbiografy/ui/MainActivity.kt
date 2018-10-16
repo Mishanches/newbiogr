@@ -37,47 +37,39 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-    fun onClick (view:View) {
+    fun onClick(view: View) {
 
         when (view.id) {
-
-
             R.id.IvTwit -> {
                 val intent2 = Intent(this@MainActivity, WebViewActivity::class.java)
                         .putExtra(IntentHelper.EXTRA_TITLE, getString(R.string.web_twitter))
-                        .putExtra(IntentHelper.EXTRA_URL,"https://twitter.com/MANUTD")
+                        .putExtra(IntentHelper.EXTRA_URL, "https://twitter.com/MANUTD")
                 startActivity(intent2)
             }
-
             R.id.IvGoogle -> {
                 val intent2 = Intent(this@MainActivity, WebViewActivity::class.java)
                         .putExtra(IntentHelper.EXTRA_TITLE, getString(R.string.web_google))
-                        .putExtra(IntentHelper.EXTRA_URL,"https://plus.google.com/+MANUTD")
+                        .putExtra(IntentHelper.EXTRA_URL, "https://plus.google.com/+MANUTD")
                 startActivity(intent2)
             }
-
             R.id.IvSiteMU -> {
                 val intent2 = Intent(this@MainActivity, WebViewActivity::class.java)
                         .putExtra(IntentHelper.EXTRA_TITLE, getString(R.string.web_site))
-                        .putExtra(IntentHelper.EXTRA_URL,"http://www.manutd.com")
+                        .putExtra(IntentHelper.EXTRA_URL, "http://www.manutd.com")
                 startActivity(intent2)
             }
-
-            R.id.IvYoutube -> {
+            R.id.IvFacebook -> {
                 val intent2 = Intent(this@MainActivity, WebViewActivity::class.java)
-                        .putExtra(IntentHelper.EXTRA_TITLE, getString(R.string.web_youtube))
-                        .putExtra(IntentHelper.EXTRA_URL,"https://www.youtube.com/channel/UCYF2FotHeGO6cNcldrTHN1g")
+                        .putExtra(IntentHelper.EXTRA_TITLE, getString(R.string.web_facebook))
+                        .putExtra(IntentHelper.EXTRA_URL, "https://www.facebook.com/manchesterunited/")
                 startActivity(intent2)
             }
         }
 
     }
 
-    fun onEmblemClick (view:View) {
-
+    fun onEmblemClick(view: View) {
         val intent = Intent(this, PlayersListActivity::class.java)
-         startActivity(intent)
-
+        startActivity(intent)
     }
-
 }

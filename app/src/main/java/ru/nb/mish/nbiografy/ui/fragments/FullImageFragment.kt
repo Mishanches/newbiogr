@@ -1,6 +1,5 @@
 package ru.nb.mish.nbiografy.ui.fragments
 
-
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.view.LayoutInflater
@@ -11,9 +10,7 @@ import kotlinx.android.synthetic.main.fragment_full_image.*
 import ru.nb.mish.nbiografy.R
 import ru.nb.mish.nbiografy.components.IntentHelper
 
-
 class FullImageFragment : Fragment() {
-
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -27,8 +24,6 @@ class FullImageFragment : Fragment() {
                               savedInstanceState: Bundle?): View? {
         return inflater.inflate(R.layout.fragment_full_image, container, false)
     }
-
-
 
     companion object {
 

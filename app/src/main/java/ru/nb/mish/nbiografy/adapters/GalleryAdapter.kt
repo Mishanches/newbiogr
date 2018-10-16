@@ -11,8 +11,8 @@ import ru.nb.mish.nbiografy.components.BindingViewHolder
 import ru.nb.mish.nbiografy.components.OnItemClickListener
 import ru.nb.mish.nbiografy.databinding.ItemGridImageBinding
 
+class GalleryAdapter(val images: List<String>, val onItemClickListener: OnItemClickListener<String>) : RecyclerView.Adapter<BindingViewHolder<ItemGridImageBinding>>() {
 
-class GalleryAdapter (val images: List<String>, val onItemClickListener: OnItemClickListener<String>): RecyclerView.Adapter<BindingViewHolder<ItemGridImageBinding>>() {
     override fun onBindViewHolder(holder: BindingViewHolder<ItemGridImageBinding>, position: Int) {
 
         val imageURL = images[position]
@@ -25,13 +25,11 @@ class GalleryAdapter (val images: List<String>, val onItemClickListener: OnItemC
         holder.itemView.setOnClickListener { onItemClickListener.onItemClick(images[holder.adapterPosition]) }
     }
 
-
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BindingViewHolder<ItemGridImageBinding> {
-        val listItemBinding= DataBindingUtil.inflate<ItemGridImageBinding>(LayoutInflater.from(parent.context),
+        val listItemBinding = DataBindingUtil.inflate<ItemGridImageBinding>(LayoutInflater.from(parent.context),
                 R.layout.item_grid_image, parent, false)
         return BindingViewHolder(listItemBinding)
     }
 
     override fun getItemCount(): Int = images.size
-
 }

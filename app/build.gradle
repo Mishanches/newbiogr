@@ -12,8 +12,8 @@ android {
         applicationId "ru.nb.mish.nbiografy"
         minSdkVersion 16
         targetSdkVersion 27
-        versionCode 1
-        versionName "1.0"
+        versionCode 3
+        versionName "3.0"
         dexOptions {
             javaMaxHeapSize "2g"
         }

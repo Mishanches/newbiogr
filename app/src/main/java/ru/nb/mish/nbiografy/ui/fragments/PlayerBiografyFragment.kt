@@ -1,6 +1,5 @@
 package ru.nb.mish.nbiografy.ui.fragments
 
-
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.text.Html
@@ -10,7 +9,6 @@ import android.view.ViewGroup
 import kotlinx.android.synthetic.main.fragment_player_biografy.*
 import ru.nb.mish.nbiografy.R
 import ru.nb.mish.nbiografy.components.IntentHelper
-
 
 class PlayerBiografyFragment : Fragment() {
 
@@ -40,7 +38,7 @@ class PlayerBiografyFragment : Fragment() {
 
         fun newInstance(biografyId: String): PlayerBiografyFragment {
             val fragment = PlayerBiografyFragment()
-            val args = Bundle() 
+            val args = Bundle()
             args.putString(IntentHelper.BIOGRAFY, biografyId)
             fragment.arguments = args
             return fragment

@@ -11,7 +11,6 @@ import kotlinx.android.synthetic.main.activity_web_view.*
 import ru.nb.mish.nbiografy.R
 import ru.nb.mish.nbiografy.components.IntentHelper
 
-
 class WebViewActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -21,10 +20,10 @@ class WebViewActivity : AppCompatActivity() {
         val webSettings = webView.settings
         webSettings.javaScriptEnabled = true
 
-        webView.webViewClient = object: WebViewClient() {
+        webView.webViewClient = object : WebViewClient() {
 
             override fun shouldOverrideUrlLoading(webView: WebView, url: String): Boolean {
-                  if (url.contains("twitter.com") or url.contains("plus.google.com")
+                if (url.contains("twitter.com") or url.contains("plus.google.com")
                         or url.contains("manutd.com") or url.contains("youtube.com")) {
                     return false
                 }
@@ -35,7 +34,6 @@ class WebViewActivity : AppCompatActivity() {
             }
         }
 
-
         title = intent.getStringExtra(IntentHelper.EXTRA_TITLE)
         webView.loadUrl(intent.getStringExtra(IntentHelper.EXTRA_URL))
     }
@@ -45,7 +43,6 @@ class WebViewActivity : AppCompatActivity() {
             this.webView.goBack()
             return true
         }
-
         return super.onKeyDown(keyCode, event)
     }
 }

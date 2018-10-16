@@ -24,7 +24,6 @@ class SampleSlide : Fragment() {
 
     companion object {
 
-
         fun newInstance(layoutResId: Int): SampleSlide {
             val sampleSlide = SampleSlide()
 
@@ -35,5 +34,4 @@ class SampleSlide : Fragment() {
             return sampleSlide
         }
     }
-
 }

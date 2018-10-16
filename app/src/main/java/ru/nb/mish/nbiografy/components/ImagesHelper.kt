@@ -1,9 +1,8 @@
 package ru.nb.mish.nbiografy.components
 
-
 object ImagesHelper {
 
-    val IMAGES_BAILLY: ArrayList<String>   = arrayListOf(
+    val IMAGES_BAILLY: ArrayList<String> = arrayListOf(
 
             "http://mish-app.ru/images/Bailly1.png",
             "http://mish-app.ru/images/Bailly2.png",
@@ -18,7 +17,7 @@ object ImagesHelper {
             "http://mish-app.ru/images/Bailly11.png",
             "http://mish-app.ru/images/Bailly12.png")
 
-    val IMAGES_BLIND: ArrayList<String>   = arrayListOf(
+    val IMAGES_BLIND: ArrayList<String> = arrayListOf(
 
             "http://mish-app.ru/images/Blind1.png",
             "http://mish-app.ru/images/Blind2.png",
@@ -35,7 +34,7 @@ object ImagesHelper {
             "http://mish-app.ru/images/Blind13.jpg",
             "http://mish-app.ru/images/Blind14.jpg")
 
-    val IMAGES_CARRICK: ArrayList<String>   = arrayListOf(
+    val IMAGES_CARRICK: ArrayList<String> = arrayListOf(
 
             "http://mish-app.ru/images/Carrick1.jpg",
             "http://mish-app.ru/images/Carrick2.jpg",
@@ -52,7 +51,7 @@ object ImagesHelper {
             "http://mish-app.ru/images/Carrick13.jpg",
             "http://mish-app.ru/images/Carrick14.jpg")
 
-    val IMAGES_DARMIAN: ArrayList<String>   = arrayListOf(
+    val IMAGES_DARMIAN: ArrayList<String> = arrayListOf(
 
             "http://mish-app.ru/images/Darmian1.jpg",
             "http://mish-app.ru/images/Darmian2.jpg",
@@ -69,7 +68,7 @@ object ImagesHelper {
             "http://mish-app.ru/images/Darmian13.jpg",
             "http://mish-app.ru/images/Darmian14.jpg")
 
-    val IMAGES_DEGEA: ArrayList<String>   = arrayListOf(
+    val IMAGES_DEGEA: ArrayList<String> = arrayListOf(
 
             "http://mish-app.ru/images/DeGea1.png",
             "http://mish-app.ru/images/DeGea2.png",
@@ -84,7 +83,7 @@ object ImagesHelper {
             "http://mish-app.ru/images/DeGea11.png",
             "http://mish-app.ru/images/DeGea12.png")
 
-    val IMAGES_FELLAINI: ArrayList<String>   = arrayListOf(
+    val IMAGES_FELLAINI: ArrayList<String> = arrayListOf(
 
             "http://mish-app.ru/images/Fellaini1.jpg",
             "http://mish-app.ru/images/Fellaini2.jpg",
@@ -101,7 +100,7 @@ object ImagesHelper {
             "http://mish-app.ru/images/Fellaini13.jpg",
             "http://mish-app.ru/images/Fellaini14.jpg")
 
-    val IMAGES_HERRERA: ArrayList<String>   = arrayListOf(
+    val IMAGES_HERRERA: ArrayList<String> = arrayListOf(
 
             "http://mish-app.ru/images/Herrera1.jpg",
             "http://mish-app.ru/images/Herrera2.jpg",
@@ -117,7 +116,7 @@ object ImagesHelper {
             "http://mish-app.ru/images/Herrera12.jpg",
             "http://mish-app.ru/images/Herrera13.jpg")
 
-    val IMAGES_IBRA: ArrayList<String>   = arrayListOf(
+    val IMAGES_IBRA: ArrayList<String> = arrayListOf(
 
             "http://mish-app.ru/images/Ibra1.jpg",
             "http://mish-app.ru/images/Ibra2.jpg",
@@ -132,7 +131,7 @@ object ImagesHelper {
             "http://mish-app.ru/images/Ibra11.jpg",
             "http://mish-app.ru/images/Ibra12.jpg")
 
-    val IMAGES_JONES: ArrayList<String>   = arrayListOf(
+    val IMAGES_JONES: ArrayList<String> = arrayListOf(
 
             "http://mish-app.ru/images/Jones1.jpg",
             "http://mish-app.ru/images/Jones2.jpg",
@@ -152,7 +151,7 @@ object ImagesHelper {
             "http://mish-app.ru/images/Jones16.jpg",
             "http://mish-app.ru/images/Jones17.jpg")
 
-    val IMAGES_LINDELOF: ArrayList<String>   = arrayListOf(
+    val IMAGES_LINDELOF: ArrayList<String> = arrayListOf(
 
             "http://mish-app.ru/images/Lindelof1.jpg",
             "http://mish-app.ru/images/Lindelof2.jpg",
@@ -167,7 +166,7 @@ object ImagesHelper {
             "http://mish-app.ru/images/Lindelof11.jpg",
             "http://mish-app.ru/images/Lindelof12.jpg")
 
-    val IMAGES_LINGRAND: ArrayList<String>   = arrayListOf(
+    val IMAGES_LINGRAND: ArrayList<String> = arrayListOf(
 
             "http://mish-app.ru/images/Lingard1.jpg",
             "http://mish-app.ru/images/Lingard2.jpg",
@@ -182,7 +181,7 @@ object ImagesHelper {
             "http://mish-app.ru/images/Lingard11.jpg",
             "http://mish-app.ru/images/Lingard12.jpg")
 
-    val IMAGES_LUKAKU: ArrayList<String>   = arrayListOf(
+    val IMAGES_LUKAKU: ArrayList<String> = arrayListOf(
 
             "http://mish-app.ru/images/Lukaku1.jpg",
             "http://mish-app.ru/images/Lukaku2.jpg",
@@ -197,7 +196,7 @@ object ImagesHelper {
             "http://mish-app.ru/images/Lukaku11.jpg",
             "http://mish-app.ru/images/Lukaku12.jpg")
 
-    val IMAGES_MARTIAL: ArrayList<String>   = arrayListOf(
+    val IMAGES_MARTIAL: ArrayList<String> = arrayListOf(
 
             "http://mish-app.ru/images/Martial1.jpg",
             "http://mish-app.ru/images/Martial2.jpg",
@@ -213,7 +212,7 @@ object ImagesHelper {
             "http://mish-app.ru/images/Martial12.jpg",
             "http://mish-app.ru/images/Martial13.jpg")
 
-    val IMAGES_MATA: ArrayList<String>   = arrayListOf(
+    val IMAGES_MATA: ArrayList<String> = arrayListOf(
 
             "http://mish-app.ru/images/Mata1.jpg",
             "http://mish-app.ru/images/Mata2.jpg",
@@ -229,7 +228,7 @@ object ImagesHelper {
             "http://mish-app.ru/images/Mata12.jpg",
             "http://mish-app.ru/images/Mata13.jpg")
 
-    val IMAGES_MATIC: ArrayList<String>   = arrayListOf(
+    val IMAGES_MATIC: ArrayList<String> = arrayListOf(
 
             "http://mish-app.ru/images/Matic1.jpg",
             "http://mish-app.ru/images/Matic2.jpg",
@@ -249,7 +248,7 @@ object ImagesHelper {
             "http://mish-app.ru/images/Matic16.jpg",
             "http://mish-app.ru/images/Matic17.jpg")
 
-    val IMAGES_POGBA: ArrayList<String>   = arrayListOf(
+    val IMAGES_POGBA: ArrayList<String> = arrayListOf(
 
             "http://mish-app.ru/images/Pogba1.jpg",
             "http://mish-app.ru/images/Pogba2.jpg",
@@ -264,7 +263,7 @@ object ImagesHelper {
             "http://mish-app.ru/images/Pogba11.jpg",
             "http://mish-app.ru/images/Pogba12.jpg")
 
-    val IMAGES_RASHFORD: ArrayList<String>   = arrayListOf(
+    val IMAGES_RASHFORD: ArrayList<String> = arrayListOf(
 
             "http://mish-app.ru/images/Rashford1.jpg",
             "http://mish-app.ru/images/Rashford2.jpg",
@@ -281,7 +280,7 @@ object ImagesHelper {
             "http://mish-app.ru/images/Rashford13.jpg",
             "http://mish-app.ru/images/Rashford14.jpg")
 
-    val IMAGES_ROJO: ArrayList<String>   = arrayListOf(
+    val IMAGES_ROJO: ArrayList<String> = arrayListOf(
 
             "http://mish-app.ru/images/Rojo1.jpg",
             "http://mish-app.ru/images/Rojo2.jpg",
@@ -297,7 +296,7 @@ object ImagesHelper {
             "http://mish-app.ru/images/Rojo12.jpg",
             "http://mish-app.ru/images/Rojo13.jpg")
 
-    val IMAGES_ROMERO: ArrayList<String>   = arrayListOf(
+    val IMAGES_ROMERO: ArrayList<String> = arrayListOf(
 
             "http://mish-app.ru/images/Romero1.jpg",
             "http://mish-app.ru/images/Romero2.jpg",
@@ -312,7 +311,7 @@ object ImagesHelper {
             "http://mish-app.ru/images/Romero11.jpg",
             "http://mish-app.ru/images/Romero12.jpg")
 
-    val IMAGES_SANCHEZ: ArrayList<String>   = arrayListOf(
+    val IMAGES_SANCHEZ: ArrayList<String> = arrayListOf(
 
             "http://mish-app.ru/images/Sanchez1.jpg",
             "http://mish-app.ru/images/Sanchez2.jpg",
@@ -338,7 +337,7 @@ object ImagesHelper {
             "http://mish-app.ru/images/Sanchez22.jpg",
             "http://mish-app.ru/images/Sanchez23.jpg")
 
-    val IMAGES_SHAW: ArrayList<String>   = arrayListOf(
+    val IMAGES_SHAW: ArrayList<String> = arrayListOf(
 
             "http://mish-app.ru/images/Shaw1.jpg",
             "http://mish-app.ru/images/Shaw2.jpg",
@@ -354,7 +353,7 @@ object ImagesHelper {
             "http://mish-app.ru/images/Shaw13.jpg",
             "http://mish-app.ru/images/Shaw14.jpg")
 
-    val IMAGES_SMALLING: ArrayList<String>   = arrayListOf(
+    val IMAGES_SMALLING: ArrayList<String> = arrayListOf(
 
             "http://mish-app.ru/images/Smalling1.jpg",
             "http://mish-app.ru/images/Smalling2.jpg",
@@ -370,7 +369,7 @@ object ImagesHelper {
             "http://mish-app.ru/images/Smalling12.jpg",
             "http://mish-app.ru/images/Smalling13.jpg")
 
-    val IMAGES_VALENCIA: ArrayList<String>   = arrayListOf(
+    val IMAGES_VALENCIA: ArrayList<String> = arrayListOf(
 
             "http://mish-app.ru/images/Valencia1.jpg",
             "http://mish-app.ru/images/Valencia2.jpg",
@@ -387,7 +386,7 @@ object ImagesHelper {
             "http://mish-app.ru/images/Valencia13.jpg",
             "http://mish-app.ru/images/Valencia14.jpg")
 
-    val IMAGES_YOUNG: ArrayList<String>   = arrayListOf(
+    val IMAGES_YOUNG: ArrayList<String> = arrayListOf(
 
             "http://mish-app.ru/images/Young1.jpg",
             "http://mish-app.ru/images/Young2.jpg",
@@ -403,7 +402,4 @@ object ImagesHelper {
             "http://mish-app.ru/images/Young12.jpg",
             "http://mish-app.ru/images/Young13.jpg",
             "http://mish-app.ru/images/Young14.jpg")
-
-
-
 }

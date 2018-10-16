@@ -2,7 +2,7 @@ package ru.nb.mish.nbiografy.components
 
 object IntentHelper {
 
-    val EXTRA_TITLE="title"
+    val EXTRA_TITLE = "title"
     val EXTRA_URL = "url"
     val PHOTO_ID = "photoId"
     val BIOGRAFY = "biografyId"

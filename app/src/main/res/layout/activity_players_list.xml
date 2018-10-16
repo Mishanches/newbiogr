@@ -9,5 +9,3 @@
     android:background="#F00"
     tools:listitem="@layout/item_player"
     tools:context=".ui.PlayersListActivity"/>
-
-

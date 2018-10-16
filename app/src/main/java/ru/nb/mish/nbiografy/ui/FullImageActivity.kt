@@ -17,7 +17,6 @@ class FullImageActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_full_image)
 
-
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         supportActionBar?.setTitle(getString(R.string.TvTitleFullImage))
 
@@ -26,24 +25,18 @@ class FullImageActivity : AppCompatActivity() {
                 supportFragmentManager)
 
         viewPager.currentItem = intent.getIntExtra(IntentHelper.IMAGE_POS, -1)
-
-
     }
 
     override fun onSupportNavigateUp(): Boolean {
         onBackPressed()
         return true
-
     }
 
-    class ImageAdapter(val imagesArray: ArrayList<String>, fm: FragmentManager): FragmentStatePagerAdapter(fm) {
+    class ImageAdapter(val imagesArray: ArrayList<String>, fm: FragmentManager) : FragmentStatePagerAdapter(fm) {
         override fun getItem(position: Int): Fragment? {
             return FullImageFragment.newInstance(imagesArray[position])
         }
 
         override fun getCount(): Int = imagesArray.size
-
     }
-
-
 }

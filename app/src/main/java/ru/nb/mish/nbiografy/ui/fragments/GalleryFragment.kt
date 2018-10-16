@@ -14,7 +14,6 @@ import ru.nb.mish.nbiografy.components.IntentHelper
 import ru.nb.mish.nbiografy.components.OnItemClickListener
 import ru.nb.mish.nbiografy.ui.FullImageActivity
 
-
 class GalleryFragment : Fragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
@@ -31,14 +30,12 @@ class GalleryFragment : Fragment() {
         rvImages.adapter = GalleryAdapter(images,
                 object : OnItemClickListener<String> {
 
-
-
-            override fun onItemClick(item: String) {
-                startActivity(Intent(activity, FullImageActivity::class.java)
-                        .putExtra(IntentHelper.IMAGE_GALLERY, images)
-                        .putExtra(IntentHelper.IMAGE_POS, images.indexOf(item)))
-            }
-        })
+                    override fun onItemClick(item: String) {
+                        startActivity(Intent(activity, FullImageActivity::class.java)
+                                .putExtra(IntentHelper.IMAGE_GALLERY, images)
+                                .putExtra(IntentHelper.IMAGE_POS, images.indexOf(item)))
+                    }
+                })
 
     }
 

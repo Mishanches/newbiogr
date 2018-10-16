@@ -2,7 +2,4 @@
 <resources>
 <dimen name="horizontal_margin">16dp</dimen>
     <dimen name="image_size">100dp</dimen>
-
-
-
 </resources>
